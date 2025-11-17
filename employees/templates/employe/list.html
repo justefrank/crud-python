@@ -1,0 +1,39 @@
+{% extends "employe/base.html" %}
+
+{% block content %}
+
+    <div class="w-full bg-base-300">
+        <div>
+            <a href="" class="btn btn-secondary w-full rounded-3xl">Ajouter un employé</a>
+        </div>
+
+        <div class="space-y-4 w-full mt-4">
+            {% for emp in employes %}
+            <div class="p-4 bg-base-100 rounded-lg w-full flex justify-between item-center">
+                <div class="space-y-2">
+                    <p class="font-bold text-lg">{{emp.nom}}</p>
+                    <p class="font-bold text-lg">{{emp.prenom}}</p>
+                    <div class="flex gap-2">
+                        <p class="font-bold text-lg">{{emp.address}}</p>
+                        <p class="badge badge-soft badge-info rounded-xl">{{emp.email}}</p>
+                         
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="badge badge-soft badge-info rounded-xl">{{emp.poste}}</p>
+                        <p class="badge badge-dash badge-info rounded-xl">${{emp.salaire}}</p>
+                    </div>
+                </div>
+                <div class="space-x2">
+                      <a href="" class="btn btn-info rounded-3xl btn-sm">Modifier</a>
+                      <a href="" class="btn btn-error btn-soft rounded-3xl btn-sm">Supprimer</a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+        </div>
+     
+    </div>
+
+{% endblock %}
