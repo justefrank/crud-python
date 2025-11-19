@@ -1,0 +1,28 @@
+{% extends "employe/base.html" %}
+
+{% block content %}
+    <h1 class="flex justify-center items-center text-2xl font-bold mb-4">
+    {% if mode == "modifier" %}
+        Modifier un employé
+    {% else %}
+        Ajouter un nouvel employé
+    {% endif %}
+    </h1>
+
+    <form method="POST" class="space-y-4">
+        {% csrf_token %}
+        {{form.nom}}
+        {{form.prenom}}
+        {{form.address}}
+        {{form.email}}
+        {{form.poste}}
+        {{form.salaire}}
+
+        {% if mode == "modifier" %}
+        <button type="submit" class="btn btn-info rounded-3xl">Modifie</button>
+        {% else %}
+        <button type="submit" class="btn btn-secondary rounded-3xl">Enregister</button>
+        {% endif %}
+    </form>
+
+{% endblock %}
