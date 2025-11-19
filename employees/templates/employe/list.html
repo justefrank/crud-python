@@ -4,7 +4,7 @@
 
     <div class="w-full bg-base-300">
         <div>
-            <a href="" class="btn btn-secondary w-full rounded-3xl">Ajouter un employé</a>
+            <a href="{% url 'ajouter_employe' %}" class="btn btn-secondary w-full rounded-3xl">Ajouter un employé</a>
         </div>
 
         <div class="space-y-4 w-full mt-4">
@@ -24,8 +24,8 @@
                     </div>
                 </div>
                 <div class="space-x2">
-                      <a href="" class="btn btn-info rounded-3xl btn-sm">Modifier</a>
-                      <a href="" class="btn btn-error btn-soft rounded-3xl btn-sm">Supprimer</a>
+                      <a href="{% url 'modifier_employe' emp.id %}" class="btn btn-info rounded-3xl btn-sm">Modifier</a>
+                      <a href="{% url 'supprimer_employe' emp.id %}" class="btn btn-error btn-soft rounded-3xl btn-sm">Supprimer</a>
 
                 </div>
 
